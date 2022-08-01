@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MovieDetails.swift
 //  netflix_clone_swiftui
 //
 //  Created by Dilshan Harendra Perera on 2022-07-29.
@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MovieDetails: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text("Movie Details")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MovieDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MovieDetails()
     }
 }

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct netflix_clone_swiftuiApp: App {
+    
+    var movieData = MovieData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(movieData)
         }
     }
 }
