@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C749367289816E900475A91 /* MovieApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C749366289816E900475A91 /* MovieApi.swift */; };
 		4C8E03BE2893B848003FB9E8 /* netflix_clone_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E03BD2893B848003FB9E8 /* netflix_clone_swiftuiApp.swift */; };
 		4C8E03C02893B848003FB9E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E03BF2893B848003FB9E8 /* ContentView.swift */; };
 		4C8E03C22893B84D003FB9E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E03C12893B84D003FB9E8 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C749366289816E900475A91 /* MovieApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApi.swift; sourceTree = "<group>"; };
 		4C8E03BA2893B848003FB9E8 /* netflix_clone_swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = netflix_clone_swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8E03BD2893B848003FB9E8 /* netflix_clone_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netflix_clone_swiftuiApp.swift; sourceTree = "<group>"; };
 		4C8E03BF2893B848003FB9E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C749365289816CD00475A91 /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+				4C749366289816E900475A91 /* MovieApi.swift */,
+			);
+			name = Apis;
+			sourceTree = "<group>";
+		};
+		4C7493682898175F00475A91 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4C8E03EA2893BBE4003FB9E8 /* MovieData.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		4C8E03B12893B848003FB9E8 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +126,8 @@
 		4C8E03BC2893B848003FB9E8 /* netflix_clone_swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				4C7493682898175F00475A91 /* Store */,
+				4C749365289816CD00475A91 /* Apis */,
 				4C8E03EC2893C4F9003FB9E8 /* Views */,
 				4C8E03E72893BA4A003FB9E8 /* Models */,
 				4C8E03BD2893B848003FB9E8 /* netflix_clone_swiftuiApp.swift */,
@@ -147,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				4C8E03E82893BA5E003FB9E8 /* Movie.swift */,
-				4C8E03EA2893BBE4003FB9E8 /* MovieData.swift */,
 				4CFB16C92897BD9300ADAA46 /* MovieCategory.swift */,
 			);
 			path = Models;
@@ -302,6 +321,7 @@
 				4CFB16CA2897BD9300ADAA46 /* MovieCategory.swift in Sources */,
 				4C8E03BE2893B848003FB9E8 /* netflix_clone_swiftuiApp.swift in Sources */,
 				4C8E03EE2893C518003FB9E8 /* MovieDetails.swift in Sources */,
+				4C749367289816E900475A91 /* MovieApi.swift in Sources */,
 				4C8E03E92893BA5E003FB9E8 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

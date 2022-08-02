@@ -9,30 +9,33 @@ import SwiftUI
 
 struct MovieRow: View {
     
-    var movieCategory: MovieCatrgory
+  
     @EnvironmentObject var movieData: MovieData
+    var movieCategory: MovieCatrgory
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
             
-            Text(movieCategory.name)
+            Text("\(movieCategory.name)   \(movieCategory.movies.count)")
                 .font(.headline)
                 .padding(.leading, 15)
                 .padding(.top, 5)
             
-            
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(alignment: .top, spacing: 0 ){
-                    ForEach(movieData.movies, id: \.self){ movie in
-                      
-                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(movie.poster_path)")) { image in
-                            image.resizable().scaledToFill()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(width: 155, height: 155)
-                        .padding(5)
-                        .cornerRadius(5)
+                    ForEach(movieCategory.movies, id: \.self){ movie in
+                        VStack{
+                            AsyncImage(url: URL(string: movie.getImage())) { image in
+                                    image.resizable().scaledToFill()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 155, height: 155)
+                                .padding(5)
+                               
+                                .cornerRadius(5)
+                        } .padding(.trailing, 10)
+                       
                            
                     }
                 }
@@ -42,7 +45,7 @@ struct MovieRow: View {
         }.frame(height: 180)
             .padding(.bottom, 50)
           .onAppear{
-              movieData.getMovies(url:movieCategory.url)
+              movieData.getMovies(category: movieCategory)
         }
             
     }
@@ -50,9 +53,12 @@ struct MovieRow: View {
 
 struct MovieRow_Previews: PreviewProvider {
     
-    static var movieCategory:[MovieCatrgory] =  MovieData().movieCategories
+    static var movieData = MovieData()
+    
+    static var movieCategory:[MovieCatrgory] =  movieData.movieCategories
     
     static var previews: some View {
-        MovieRow(movieCategory: movieCategory[0]).environmentObject(MovieData())
+        MovieRow(movieCategory: movieCategory[1])
+            .environmentObject(movieData)
     }
 }

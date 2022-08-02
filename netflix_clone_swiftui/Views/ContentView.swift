@@ -21,13 +21,6 @@ struct ContentView: View {
                     MovieRow(movieCategory: category)
                 }
                 
-                
-                Spacer()
-                
-                List(movieData.movies){ movie in
-                    
-                    Text(movie.name)
-                }
             
             }
         }
